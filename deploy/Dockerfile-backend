@@ -3,7 +3,7 @@ FROM python:3.7
 RUN pip install pipenv
 # TODO:  Multi stage so we can leave dev tools out of final image
 # based on suggestions from here. https://www.python-ldap.org/en/latest/installing.html
-RUN apt update && apt install -y python3.7-dev libldap2-dev libsasl2-dev
+RUN apt-get update && apt-get install -y python3.7-dev libldap2-dev libsasl2-dev
 
 COPY Pipfile.lock Pipfile local_requirements.txt /
 RUN pipenv install --system
