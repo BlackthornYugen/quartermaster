@@ -23,6 +23,6 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('gui/', include('gui.urls')),
     path('client/', include('client.urls')),
-    # path('teamcity/', include('teamcity.urls')),
+    path('teamcity/', include('teamcity.urls')),
     path('', RedirectView.as_view(url='/gui/resource/'), name='index'),
 ]
