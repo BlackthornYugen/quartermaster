@@ -1,7 +1,7 @@
 version: "3"
 services:
   backend:
-    image: ${docker_registry-}backend:${version:-UNSET}
+    image: "${docker_registery-quartermaster/}backend:${version:-UNSET}"
     build:
       dockerfile: deploy/Dockerfile-backend
       context: .
@@ -18,7 +18,7 @@ services:
     restart: always
 
   tasks:
-    image: ${docker_registry-}tasks:${version:-UNSET}
+    image: "${docker_registry-quartermaster/}tasks:${version:-UNSET}"
     build:
       dockerfile: deploy/Dockerfile-backend
       context: .
@@ -43,7 +43,7 @@ services:
     restart: always
 
   frontend:
-    image: ${docker_registry:-}frontend:${version:-UNSET}
+    image: "${docker_registry:-quartermaster/}frontend:${version:-UNSET}"
     build:
       dockerfile: deploy/Dockerfile-frontend
       context: .
